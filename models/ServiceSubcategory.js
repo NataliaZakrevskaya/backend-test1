@@ -14,7 +14,11 @@ const ServiceSubcategorySchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    imageUrl: String
+    imageUrl: String,
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ServiceCategory',
+    }
 }, {
     timestamps: true
 })

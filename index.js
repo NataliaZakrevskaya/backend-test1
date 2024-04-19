@@ -10,6 +10,7 @@ import checkAuth from './utils/checkAuth.js'
 import * as UserController from "./controllers/UserController.js";
 import * as PostController from "./controllers/PostController.js";
 import * as ServiceCategoriesController from "./controllers/ServiceCategoriesController.js";
+import * as ServiceSubcategoryController from "./controllers/ServiceSubcategoriesController.js";
 
 //connect DB
 mongoose
@@ -42,9 +43,10 @@ app.delete('/service-categories/:id', checkAuth, ServiceCategoriesController.rem
 app.patch('/service-categories/:id', checkAuth, ServiceCategoriesController.update)
 
 //requests Service Subcategories
-// app.get('/service-categories', ServiceCategoriesController.getAll)
+app.get('/service-subcategories', ServiceSubcategoryController.getAll)
+app.post('/service-subcategories/find-by-category', ServiceSubcategoryController.getAllByCategory)
 // app.get('/service-categories/:id', ServiceCategoriesController.getOne)
-app.post('/service-categories/:categoryId', checkAuth, createServiceSubcategoryValidation, ServiceCategoriesController.create)
+app.post('/service-categories/:categoryId', checkAuth, createServiceSubcategoryValidation, ServiceSubcategoryController.create)
 // app.delete('/service-categories/:id', checkAuth, ServiceCategoriesController.remove)
 // app.patch('/service-categories/:id', checkAuth, ServiceCategoriesController.update)
 

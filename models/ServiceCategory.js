@@ -7,8 +7,11 @@ const ServiceCategorySchema = new mongoose.Schema({
     },
     description: String,
     subcategories: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ServiceSubcategory'
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'ServiceSubcategory'
+        }],
+        default: []
     },
     viewsCount: {
         type: Number,

@@ -23,7 +23,7 @@ export const createServiceCategoryValidation = [
     body('imageUrl').optional().isString(),
 ]
 export const createServiceSubcategoryValidation = [
-    body('title', 'Укажите заголовок категории').isString().isLength({min: 3}),
+    body('title', 'Укажите заголовок подкатегории').isString().isLength({min: 3}),
     body('description').optional().isLength({min: 5}),
     body('specialists').optional().isArray(),
     body('imageUrl').optional().isString(),
